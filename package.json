@@ -1,0 +1,38 @@
+{
+  "name": "electron-auto-update-example",
+  "version": "1.0.1",
+  "description": "electron update test",
+  "main": "main.js",
+  "author": "Shelemekh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always",
+    "release": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shelemekh/electron-builder.git"
+  },
+  "devDependencies": {
+    "electron": "^9.2.0",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.5"
+  },
+  "build": {
+    "appId": "com.example.ElectronAutoUpdate",
+    "extends": null,
+    "win": {
+      "icon": "build/icon.ico"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "Shelemekh",
+      "repo": "electron-builder",
+      "token": "ace67d7bc1eb88918eb86fdd25dedff42a9a420e"
+    }
+  }
+}
